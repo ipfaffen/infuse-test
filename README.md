@@ -13,13 +13,9 @@ Requisitos
 - Use o script de criação de tabelas fornecido no projeto.
 - Atualize as configurações de acesso ao banco no arquivo application.yml:
 
-spring:
-  datasource:
-    url: jdbc:mariadb://localhost:3306/nome_do_banco
-    username: seu_usuario
-    password: sua_senha
+- Compile e rode a aplicação:
 
-- Compile e rode a aplicação:mvn clean package
+mvn clean package
 mvn spring-boot:run
 
 - A API estará disponível em: http://localhost:8080
