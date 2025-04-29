@@ -1,0 +1,42 @@
+<div class="search-container">
+  <h1>BUSCA DE CRÉDITOS</h1>
+  
+  <div class="search-input">
+    <input 
+      type="text" 
+      [(ngModel)]="searchQueryNfse" 
+      placeholder="Número da NFS-e..."
+      (input)="onInputChange(true)"
+    >
+    <input 
+      type="text" 
+      [(ngModel)]="searchQueryNumeroCredito" 
+      placeholder="Número do Crédito..."
+      (input)="onInputChange(false)"
+    >
+    <div class="hint" *ngIf="searchQuery && searchQuery.length < 4">
+      Digite pelo menos quatro números.
+    </div>
+  </div>
+  
+  <div class="search-results" *ngIf="searchResults.length > 0 || isLoading">
+    <div *ngIf="isLoading" class="loading">Carregando...</div>
+    
+    <ul *ngIf="!isLoading">
+      <li *ngFor="let result of searchResults">
+        <div class="result-item">
+          <h3>{{ result.numeroCredito }}</h3>
+          <p>NFS-e {{ result.numeroNfse }}</p>
+          <small style="margin-left:0;">{{ result.dataConstituicao }}</small>
+          <small>{{ result.valorIssqn }}</small>
+          <small>{{ result.tipoCredito }}</small>
+          <small>{{ result.simplesNacional }}</small>
+          <small>{{ result.aliquota }}</small>
+          <small>{{ result.valorFaturado }}</small>
+          <small>{{ result.valorDeducao }}</small>
+          <small>{{ result.baseCalculo }}</small>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
