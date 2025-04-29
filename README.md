@@ -7,7 +7,9 @@ Requisitos
 - Docker
 - MariaDB (se não utilizar containerização para o banco de dados)
 
+
 1. Rodando Localmente
+
 1.1 Configuração da API Spring Boot
 - Certifique-se de que o banco MariaDB está rodando localmente e está configurado corretamente:
 - Use o script de criação de tabelas fornecido no projeto.
@@ -16,6 +18,7 @@ Requisitos
 - Compile e rode a aplicação:
 
 mvn clean package
+
 mvn spring-boot:run
 
 - A API estará disponível em: http://localhost:8080
